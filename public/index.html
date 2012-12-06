@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="javascripts/handlebars/handlebars-1.0.0.beta.6.js"></script>
+    <script id="footer" type="text/x-handlebars-template">
+        <p>&copy; Company 2012</p>
+    </script>
+    <script id="header" type="text/x-handlebars-template">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">酒店</a>
+                <div class="nav-collapse collapse">
+                    <div class="pull-right">
+                        <button class="btn loginbt" >登录</button>
+                        <button class="btn regesbt">注册</button>
+                    </div>
+
+                    <ul class="nav">
+                        <li class="active index"><a>首页</a></li>
+                        <li class="hotelname"><a>酒店</a></li>
+                        <li class="countryname"><a>国家</a></li>
+                        <li class="contactus"><a>联系我们</a></li>
+                        <li class="about"><a>关于</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="container" type="text/x-handlebars-template">
+        <p>
+            中国目前引领亚洲地区旅游及酒店行业的快速发展，且商务休闲收入增长势头强劲。
+            与一线城市相比，中国二、三线城市的酒店客房价格增长较为明显。
+            由于二、三线城市新酒店陆续开业，政府投资兴建新的交通设施，这将进一步促进中国酒店客房价格稳步增长。
+            中外酒店品牌继续扩张其营业版图，未来酒店的供需平衡将会是一项备受关注议题。
+            据51报告在线数据，显示全球各类连锁酒店所占的比重分别为：豪华型5%，高档30%，中档37%，经济型20%，适用型8%。
+            不过，经济型和适用型的酒店仅占28%，发展潜力较大。截至目前，全国住宿餐饮企业近330万家，年营业收入超过2万亿，占当年GDP的5%左右。
+            2011年全国餐饮收入20543亿元，同比增长16.9%，从业人员2200多万人。
+            在住宿业，全国住宿企业超过28万家，其中，全国住宿业限额以上企业达1.6万家，同比增长8.4%;营业收入2184亿元，同比增长23.3%;营业利润1603亿元，同比增长22%。
+            行业的增长幅度有所放缓，说明过去若干年的高利润时代已经过去，进入微利时代。
+        </p>
+    </script>
+
+    <script id="slideBar" type="text/x-handlebars-template">
+        <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+                <li class="active"><a >亚洲</a></li>
+                <li><a >欧洲</a></li>
+                <li><a >南美洲</a></li>
+                <li><a >非洲</a></li>
+            </ul>
+        </div>
+     </script>
+
+    <script id="center-content" type="text/x-handlebars-template">
+        <div class="hero-unit">{{title}}</div>
+        <div>{{content}}</div>
+    </script>
+    <script id="indexView" type="text/x-handlebars-template">
+        <div id="myCarousel" class="carousel slide">
+            <div class="carousel-inner">
+               <div class="item active">
+                <img src="images/slide-01.jpg">
+
+                <div class="carousel-caption">
+                <p>
+                健康是指一个人在身体、精神和社会等方面都处于良好的状态。传统的健康观是“无病即健康”，现代人的健康观是整体健康，
+        世界卫生组织提出“健康不仅是躯体没有疾病，还要具备心理健康、社会适应良好和有道德”。因此，现代人的健康内容包括：
+        躯体健康、心理健康、心灵健康、社会健康、智力健康、道德健康、环境健康等。健康是人的基本权利。健康是人生的第一财富。
+        </p>
+                </div>
+                </div>
+               <div class="item">
+                <img src="images/slide-02.jpg">
+
+                <div class="carousel-caption">
+                <p>
+                健康是指一个人在身体、精神和社会等方面都处于良好的状态。传统的健康观是“无病即健康”，现代人的健康观是整体健康，
+        世界卫生组织提出“健康不仅是躯体没有疾病，还要具备心理健康、社会适应良好和有道德”。因此，现代人的健康内容包括：
+        躯体健康、心理健康、心灵健康、社会健康、智力健康、道德健康、环境健康等。健康是人的基本权利。健康是人生的第一财富。
+        </p>
+                </div>
+                </div>
+               <div class="item">
+                <img src="images/slide-03.jpg">
+
+                <div class="carousel-caption">
+                <p>
+                健康是指一个人在身体、精神和社会等方面都处于良好的状态。传统的健康观是“无病即健康”，现代人的健康观是整体健康，
+        世界卫生组织提出“健康不仅是躯体没有疾病，还要具备心理健康、社会适应良好和有道德”。因此，现代人的健康内容包括：
+        躯体健康、心理健康、心灵健康、社会健康、智力健康、道德健康、环境健康等。健康是人的基本权利。健康是人生的第一财富。
+        </p>
+                </div>
+                </div>
+           </div>
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+    </script>
+    <script id="regeistView" type="text/x-handlebars-template">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3>注册</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">用户名:</label>
+                    <div class="controls">
+                        <input type="text"  placeholder="用户名">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">密码:</label>
+                    <div class="controls">
+                        <input type="password"  placeholder="密码">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">确认密码:</label>
+                    <div class="controls">
+                        <input type="password"  placeholder="密码">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+                        <button type="submit" class="btn btn-primary">注册</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </script>
+    <script id="loginView" type="text/x-handlebars-template">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3>登录</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">用户名:</label>
+                    <div class="controls">
+                        <input type="text" id="inputEmail" placeholder="用户名">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">密码:</label>
+                    <div class="controls">
+                        <input type="password" id="inputPassword" placeholder="密码">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="checkbox">
+                            <input type="checkbox">记住我
+                        </label>
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+                        <button type="submit" class="btn btn-primary bt_login">登录</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </script>
+</head>
+<body>
+
+    <div class="topview"></div>
+    <div class="middleview"></div>
+    <div class="footview"></div>
+
+<script src="javascripts/jquery/jquery-1.8.1.min.js"></script>
+<script src="javascripts/underscore/underscore-min.js"></script>
+<script src="javascripts/backbone/backbone-min.js"></script>
+<script src="javascripts/hotel/hotel.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap-carousel.js"></script>
+<script src="bootstrap/js/bootstrap-alert.js"></script>
+<script src="bootstrap/js/bootstrap-modal.js"></script>
+
+<script>
+    $(document).ready(function () {
+         var headerView = new hotel.headerView;
+        headerView.render().$el.appendTo(".topview");
+        var indexView = new hotel.indexView;
+        indexView.render().$el.appendTo(".middleview");
+        var footerView = new hotel.footerView;
+        footerView.render().$el.appendTo(".footview");
+    });
+</script>
+</body>
+</html>
